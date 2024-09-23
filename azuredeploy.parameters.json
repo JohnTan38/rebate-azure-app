@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.1",
     "parameters": {
         "webAppName": {
-            "value": "streamlit-azz-app"
+            "value": "rebate-azure-app"
         },
         "sku": {
             "value": "B3"
@@ -12,7 +12,7 @@
             "value": "PYTHON|3.10"
         },
         "repoUrl": {
-            "value": "https://github.com/JohnTan38/streamlit-azz-app.git"
+            "value": "https://github.com/JohnTan38/rebate-azure-app.git"
         },
         "repoBranch": {
             "value": "main"
