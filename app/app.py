@@ -372,7 +372,7 @@ elif dataUpload is not None:
                     return df_updated
                  
                 # Transpose the DataFrame to have weeks as rows
-                df_overall_rebate_efficiency_new_0 = df_overall_rebate_efficiency_new.T
+                df_overall_rebate_efficiency_new_0 = df_overall_rebate_efficiency_new_0.T
                 df_overall_rebate_efficiency_new_0.columns = ['Efficiency']
                 df_overall_rebate_efficiency_new_0.index.name = 'Week'
                 df_overall_rebate_efficiency_new = add_overall_efficiency(df_overall_rebate_efficiency_0, overall_rebate_efficiency)
