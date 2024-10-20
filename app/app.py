@@ -302,8 +302,8 @@ elif dataUpload is not None:
                     df_psa['PSALOLO'] = df_psa['PSALOLO'].astype(float)
                     df_psa['Size'] = df_psa['Size'].str.extract('(\d+)')#.astype(int)
                 
-                    psa_lolo_20 = df_psa[df_psa['Size'] == 20]['PSALOLO'].sum() # Sum all rows of 'PSALOLO' where 'Size' == 20
-                    psa_lolo_40 = df_psa[df_psa['Size'] == 40]['PSALOLO'].sum() # Sum all rows of 'PSALOLO' where 'Size' == 40
+                    psa_lolo_20 = df_psa[df_psa['Size'] == '20']['PSALOLO'].sum() # Sum all rows of 'PSALOLO' where 'Size' == 20
+                    psa_lolo_40 = df_psa[df_psa['Size'] == '40']['PSALOLO'].sum() # Sum all rows of 'PSALOLO' where 'Size' == 40
                     # Create a new DataFrame with the results
                     df_psa_lolo = pd.DataFrame({'PSALOLO': [psa_lolo_20, psa_lolo_40]}, index=[20, 40]) # Create new DataFrame with results
                     return df_psa_lolo
