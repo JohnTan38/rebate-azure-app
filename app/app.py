@@ -380,7 +380,7 @@ elif dataUpload is not None:
                 
                 df_overall_rebate_efficiency_new = add_overall_efficiency(df_overall_rebate_efficiency_new_0, overall_rebate_efficiency)
                 df_overall_rebate_efficiency_new.drop_duplicates(keep='first', inplace=True)
-                df_overall_rebate_efficienct_new.set_index('Week', inplace=True, drop=True) 
+                df_overall_rebate_efficiency_new.set_index('Week', inplace=True, drop=True) 
                 st.dataframe(df_overall_rebate_efficiency_new) 
 
                 def plot_efficiency(df_efficiency,num_weeks):
