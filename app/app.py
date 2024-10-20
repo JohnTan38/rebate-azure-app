@@ -308,12 +308,12 @@ elif dataUpload is not None:
                  
                 df_overall_rebate_efficiency = pd.read_excel(r'https://raw.githubusercontent.com/JohnTan38/Project-Income/main/Overall_Rebate_Efficiency.xlsx', 
                                             sheet_name='OverallRebateEfficiency', engine='openpyxl')
-                df_psa_lolo = pd.read_excel(r'https://raw.githubusercontent.com/JohnTan38/Project-Income/main/Overall_Rebate_Efficiency.xlsx', 
-                                    sheet_name='PSA_LOLO', engine='openpyxl')
+                #df_psa_lolo = pd.read_excel(r'https://raw.githubusercontent.com/JohnTan38/Project-Income/main/Overall_Rebate_Efficiency.xlsx', 
+                                    #sheet_name='PSA_LOLO', engine='openpyxl')
                 # Set the 'Unnamed: 0' column as the index
-                df_psa_lolo.set_index('Unnamed: 0', inplace=True)
+                #df_psa_lolo.set_index('Unnamed: 0', inplace=True)
                 df_overall_rebate_efficiency.set_index('Week', inplace=True)
-                #df_psa_lolo = compute_psa_lolo(df_week_appended)
+                df_psa_lolo = compute_psa_lolo(df_week_appended)
                 psa_lolo_20 = df_psa_lolo['PSALOLO'][20]
                 psa_lolo_40 = df_psa_lolo['PSALOLO'][40]
                 #sum across cols
