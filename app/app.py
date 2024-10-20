@@ -316,6 +316,7 @@ elif dataUpload is not None:
                 #df_psa_lolo.set_index('Unnamed: 0', inplace=True)
                 df_overall_rebate_efficiency.set_index('Week', inplace=True)
                 df_psa_lolo = compute_psa_lolo(df_week_appended)
+                st.dataframe(df_psa_lolo)
                 psa_lolo_20 = df_psa_lolo['PSALOLO'][20]
                 psa_lolo_40 = df_psa_lolo['PSALOLO'][40]
                 #sum across cols
