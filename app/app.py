@@ -85,6 +85,7 @@ elif dataUpload is not None:
                 week_number = file.name.split('_')[3].split('.')[0]
                 df_transport = pd.read_excel(file, sheet_name='Week '+week_number, parse_dates=['EventTime'], engine='openpyxl')
                 df_transport = df_transport[['ContainerNumber', 'CarrierName', 'EventTime', 'COD_ATD']]
+                df_transport['EventTime'] = df_transport['EventTime'].astype('str') 
                 df_transport['EventTime'] = df_transport['EventTime'].str.replace('am', 'AM').str.replace('pm', 'PM')
                 try:
                     df_transport['EventTime'] = pd.to_datetime(df_transport['EventTime'], format='%d/%m/%Y %I:%M:%S %p', dayfirst=True)#.dt.strftime()
