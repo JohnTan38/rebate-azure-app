@@ -354,10 +354,28 @@ elif dataUpload is not None:
                     df_overall_rebate_efficiency_new = df_overall_rebate_efficiency.T
                      
 
+                def add_overall_efficiency(df, overall_efficiency):
+                    """
+                    Appends the overall rebate efficiency to the last row of the 'Efficiency' column.
+                    Args:
+                    df (pd.DataFrame): The input DataFrame.
+                    overall_efficiency (float): The overall rebate efficiency.
+                    Returns:
+                    pd.DataFrame: The updated DataFrame with the overall efficiency appended.
+                    """
+                    # Create a new row with the last week number incremented by 1 and the overall efficiency
+                    new_row = pd.DataFrame({'Week': [f"Week_{int(df['Week'].str.split('_').str[-1].iloc[-1])+0}"], 
+                                           'Efficiency': [overall_efficiency]})
+
+                    # Append the new row to the original DataFrame
+                    df_updated = pd.concat([df, new_row], ignore_index=True)
+                    return df_updated
+                 
                 # Transpose the DataFrame to have weeks as rows
-                df_overall_rebate_efficiency_new = df_overall_rebate_efficiency_new.T
-                df_overall_rebate_efficiency_new.columns = ['Efficiency']
-                df_overall_rebate_efficiency_new.index.name = 'Week'
+                df_overall_rebate_efficiency_new_0 = df_overall_rebate_efficiency_new.T
+                df_overall_rebate_efficiency_new_0.columns = ['Efficiency']
+                df_overall_rebate_efficiency_new_0.index.name = 'Week'
+                df_overall_rebate_efficiency_new = add_overall_efficiency(df_overall_rebate_efficiency_0, overall_rebate_efficiency)
                 st.dataframe(df_overall_rebate_efficiency_new) 
 
                 def plot_efficiency(df_efficiency,num_weeks):
