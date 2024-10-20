@@ -71,10 +71,9 @@ elif dataUpload is not None:
                 df_week_arrive = df_week_arrive[['ContainerNumber', 'CarrierName', 'Size Type', 'EventTime']]
                 df_week_exit = pd.read_excel(file, sheet_name='Exit', engine='openpyxl') #'Week_36_1.xlsx'
                 df_week_exit = df_week_exit[['ContainerNumber', 'CarrierName', 'Size Type', 'EventTime']]
-                #df_week_2_arrive = pd.read_excel(path_transport+ 'Week_36_2.xlsx', sheet_name='Arrival', engine='openpyxl')
-                #df_week_2_arrive = df_week_2_arrive[['ContainerNumber', 'CarrierName', 'Size Type', 'EventTime']]
-                #df_week_2_exit = pd.read_excel(path_transport+ 'Week_36_2.xlsx', sheet_name='Exit', engine='openpyxl')
-                #df_week_2_exit = df_week_2_exit[['ContainerNumber', 'CarrierName', 'Size Type', 'EventTime']]
+                df_week_arrive['Size Type'] = df_week_arrive['Size Type'].fillna(0)
+                df_week_exit['Size Type'] = df_week_exit['Size Type'].fillna(0) 
+                
 
                 df_week = pd.concat([df_week_arrive, df_week_exit])
 
