@@ -328,6 +328,7 @@ elif dataUpload is not None:
                 rebate_efficiency_40 = (df_total_offpeak_peak['total_offpeak_peak_rebate']['40'] /psa_lolo_40) /0.5932
                 #overall_rebate_efficiency = math.ceil(((rebate_efficiency_20+rebate_efficiency_40)/2)*100) /100 #round 2 decimals
                 overall_rebate_efficiency = round(((rebate_efficiency_20+rebate_efficiency_40)/2),4) #4 decimals
+                st.write(overall_rebate_efficiency) 
 
                 def add_column(df,new_week):
                         last_column = df.columns[-1]
