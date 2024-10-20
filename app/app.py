@@ -56,7 +56,7 @@ def merge_cod_atd(df_week, df_transport):
         
     df_merged['COD_ATD'] = df_merged['COD_ATD'].fillna('-') # Fill NaN values in 'COD_ATD' with '-'
   
-    df_week_appended = df_merged[['ContainerNumber', 'CarrierName', 'Size Type', 'EventTime_x', 'COD_ATD']] # Select the required columns
+    df_week_appended = df_merged[['ContainerNumber', 'CarrierName', 'Size Type', 'EventTime_x', 'COD_ATD', 'PSALOLO']] # Select the required columns
     df_week_appended = df_week_appended.rename(columns={'Size Type': 'Size', 'EventTime_x': 'EventTime'})
     return df_week_appended
 
