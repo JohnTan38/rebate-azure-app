@@ -93,7 +93,7 @@ elif dataUpload is not None:
                 
                 
                 df_week_appended = merge_cod_atd(df_week, df_transport)
-                df_week_appended['Size'] = df_week_appended['Size'].str.extract('(\d+)').astype(int) 
+                df_week_appended['Size'] = df_week_appended['Size'].str.extract('(\d+)')#.astype(int)
                 st.write(df_week_appended.head()) 
                 #df_week_appended['EventTime'] = pd.to_datetime(df_week_appended['EventTime'], format='%Y-%m-%d %H:%M:%S')
                 def remove_invalid_rows(df):
