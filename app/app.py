@@ -340,7 +340,7 @@ elif dataUpload is not None:
                 today_date = datetime.datetime.today().strftime('%Y-%m-%d') #format as str
                 date = datetime.datetime.strptime(today_date, '%Y-%m-%d')
                 week_num = date.isocalendar()[1] #get week num of current date
-                week_num=37 #development
+                #week_num=37 #development
 
                 def get_week_number(df_rebate_efficiency):
                         last_week_label = df_rebate_efficiency['Week'].iloc[-1] #get the last week label
