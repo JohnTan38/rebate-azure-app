@@ -352,7 +352,7 @@ elif dataUpload is not None:
                     df_overall_rebate_efficiency_new = add_column(df_overall_rebate_efficiency.T, overall_rebate_efficiency)
                 else:
                     df_overall_rebate_efficiency_new = df_overall_rebate_efficiency.T
-                st.dataframe(df_overall_rebate_efficieny_new)     
+                     
 
                 # Transpose the DataFrame to have weeks as rows
                 df_overall_rebate_efficiency_new = df_overall_rebate_efficiency_new.T
