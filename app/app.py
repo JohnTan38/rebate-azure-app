@@ -375,6 +375,7 @@ elif dataUpload is not None:
                 df_overall_rebate_efficiency_new_0 = df_overall_rebate_efficiency_new_0.T
                 df_overall_rebate_efficiency_new_0.columns = ['Efficiency']
                 df_overall_rebate_efficiency_new_0.index.name = 'Week'
+                st.dataframe(df_overall_rebate_efficiency_new_0) 
                 df_overall_rebate_efficiency_new = add_overall_efficiency(df_overall_rebate_efficiency_new_0, overall_rebate_efficiency)
                 st.dataframe(df_overall_rebate_efficiency_new) 
 
