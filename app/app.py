@@ -349,9 +349,9 @@ elif dataUpload is not None:
                         return week_number
                 
                 if week_num != get_week_number(df_overall_rebate_efficiency.reset_index()):
-                    df_overall_rebate_efficiency_new = add_column(df_overall_rebate_efficiency.T, overall_rebate_efficiency)
+                    df_overall_rebate_efficiency_new_0 = add_column(df_overall_rebate_efficiency.T, overall_rebate_efficiency)
                 else:
-                    df_overall_rebate_efficiency_new = df_overall_rebate_efficiency.T
+                    df_overall_rebate_efficiency_new_0 = df_overall_rebate_efficiency.T
                      
 
                 def add_overall_efficiency(df, overall_efficiency):
