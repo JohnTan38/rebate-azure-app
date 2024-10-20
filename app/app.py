@@ -364,8 +364,8 @@ elif dataUpload is not None:
                     pd.DataFrame: The updated DataFrame with the overall efficiency appended.
                     """
                     # Create a new row with the last week number incremented by 1 and the overall efficiency
-                    new_row = pd.DataFrame({'Week': [f"Week_{int(df['Week'].str.split('_').str[-1].iloc[-1])+0}"], 
-                                           'Efficiency': [overall_efficiency]})
+                    new_row = pd.DataFrame({'Week': ['Week_' + str(int(df['Week'].iloc[-1][5:]) + 0)],
+                           'Efficiency': [overall_efficiency]})
 
                     # Append the new row to the original DataFrame
                     df_updated = pd.concat([df, new_row], ignore_index=True)
