@@ -381,7 +381,8 @@ elif dataUpload is not None:
                 df_overall_rebate_efficiency_new_0.reset_index(inplace=True)
                 
                 df_overall_rebate_efficiency_new = add_overall_efficiency(df_overall_rebate_efficiency_new_0, overall_rebate_efficiency)
-                df_overall_rebate_efficiency_new.drop_duplicates(keep='first', inplace=True)
+                #df_overall_rebate_efficiency_new.drop_duplicates(keep='first', inplace=True)
+                st.write(df_overall_rebate_efficiency_new)
                 df_overall_rebate_efficiency_new.set_index('Week', inplace=True, drop=True) 
 
                 st.header('Overall Rebate Efficiency')
