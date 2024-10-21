@@ -316,7 +316,7 @@ elif dataUpload is not None:
                 #df_psa_lolo.set_index('Unnamed: 0', inplace=True)
                 df_overall_rebate_efficiency.set_index('Week', inplace=True)
                 df_psa_lolo = compute_psa_lolo(df_week_appended)
-                st.dataframe(df_psa_lolo)
+                #st.dataframe(df_psa_lolo)
                 psa_lolo_20 = df_psa_lolo['PSALOLO'][20]
                 psa_lolo_40 = df_psa_lolo['PSALOLO'][40]
                 #sum across cols
@@ -329,7 +329,7 @@ elif dataUpload is not None:
                 rebate_efficiency_40 = (df_total_offpeak_peak['total_offpeak_peak_rebate']['40'] /psa_lolo_40) /0.5932
                 #overall_rebate_efficiency = math.ceil(((rebate_efficiency_20+rebate_efficiency_40)/2)*100) /100 #round 2 decimals
                 overall_rebate_efficiency = round(((rebate_efficiency_20+rebate_efficiency_40)/2),4) #4 decimals
-                st.write(overall_rebate_efficiency) 
+                #st.write(overall_rebate_efficiency) 
 
                 def add_column(df,new_week):
                         last_column = df.columns[-1]
@@ -381,7 +381,7 @@ elif dataUpload is not None:
                 df_overall_rebate_efficiency_new = add_overall_efficiency(df_overall_rebate_efficiency_new_0, overall_rebate_efficiency)
                 df_overall_rebate_efficiency_new.drop_duplicates(keep='first', inplace=True)
                 df_overall_rebate_efficiency_new.set_index('Week', inplace=True, drop=True) 
-                st.dataframe(df_overall_rebate_efficiency_new) 
+                st.dataframe(df_overall_rebate_efficiency_new.T)
 
                 def plot_efficiency(df_efficiency,num_weeks):
     
