@@ -384,7 +384,7 @@ elif dataUpload is not None:
 
                 st.header('Overall Rebate Efficiency')
                 #display_dataframe(df_overall_rebate_efficiency_new.T)
-                st.dataframe(df_overall_rebate_efficiency_new.T)
+                #st.dataframe(df_overall_rebate_efficiency_new.T)
 
                 def plot_efficiency(df_efficiency,num_weeks):
     
