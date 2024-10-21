@@ -373,7 +373,7 @@ elif dataUpload is not None:
 
                         # Append the new row to the original DataFrame
                         df_updated = pd.concat([df, new_row], ignore_index=True)
-                        return df_updated
+                    return df_updated
                  
                 # Transpose the DataFrame to have weeks as rows
                 df_overall_rebate_efficiency_new_0 = df_overall_rebate_efficiency_new_0.T
