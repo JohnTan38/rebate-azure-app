@@ -366,7 +366,7 @@ elif dataUpload is not None:
                     pd.DataFrame: The updated DataFrame with the overall efficiency appended.
                     """
                     last_efficiency = df['Efficiency'].iloc[-1]
-                    st.write(last_efficiency)
+                    
                     #if pd.isnull(last_efficiency) or last_efficiency is None:
                     # Create a new row with the last week number incremented by 1 and the overall efficiency
                     new_row = pd.DataFrame({'Week': ['Week_' + str(int(df['Week'].iloc[-1][5:]) + 0)],
@@ -380,7 +380,10 @@ elif dataUpload is not None:
                 df_overall_rebate_efficiency_new_0 = df_overall_rebate_efficiency_new_0.T
                 df_overall_rebate_efficiency_new_0.columns = ['Efficiency']
                 df_overall_rebate_efficiency_new_0.reset_index(inplace=True)
-                
+
+                last_efficiency = df_overall_rebate_efficiency_new_0['Efficiency'].iloc[-1]
+                st.write(last_efficiency)
+                #if pd.isnull(last_efficiency) or last_efficiency is None:
                 df_overall_rebate_efficiency_new = add_overall_efficiency(df_overall_rebate_efficiency_new_0, overall_rebate_efficiency)
                 df_overall_rebate_efficiency_new.drop_duplicates(keep='first', inplace=True)
                 #st.write(df_overall_rebate_efficiency_new)
