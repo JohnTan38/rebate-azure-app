@@ -358,19 +358,21 @@ elif dataUpload is not None:
 
                 def add_overall_efficiency(df, overall_efficiency):
                     """
-                    Appends the overall rebate efficiency to the last row of the 'Efficiency' column.
+                    Appends the overall rebate efficiency to the last row of the 'Efficiency' column if value empty or none.
                     Args:
                     df (pd.DataFrame): The input DataFrame.
                     overall_efficiency (float): The overall rebate efficiency.
                     Returns:
                     pd.DataFrame: The updated DataFrame with the overall efficiency appended.
                     """
-                    # Create a new row with the last week number incremented by 1 and the overall efficiency
-                    new_row = pd.DataFrame({'Week': ['Week_' + str(int(df['Week'].iloc[-1][5:]) + 0)],
-                           'Efficiency': [overall_efficiency]})
+                    last_efficiency = df['Efficiency'].iloc[-1]
+                    if pd.isnull(last_efficiency) or last_efficiency is None:
+                        # Create a new row with the last week number incremented by 1 and the overall efficiency
+                        new_row = pd.DataFrame({'Week': ['Week_' + str(int(df['Week'].iloc[-1][5:]) + 0)],
+                                'Efficiency': [overall_efficiency]})
 
-                    # Append the new row to the original DataFrame
-                    df_updated = pd.concat([df, new_row], ignore_index=True)
+                        # Append the new row to the original DataFrame
+                        df_updated = pd.concat([df, new_row], ignore_index=True)
                     return df_updated
                  
                 # Transpose the DataFrame to have weeks as rows
